@@ -677,7 +677,7 @@ class SimplePixal3DImageToGLB:
                 "shape_guidance": ("FLOAT", {"default": 7.5, "min": 0.0, "max": 30.0, "step": 0.1}),
                 "tex_guidance": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 30.0, "step": 0.1}),
                 "max_num_tokens": ("INT", {"default": 49152, "min": 4096, "max": 196608, "step": 1024}),
-                "texture_size": ([1024, 2048, 4096], {"default": 2048}),
+                "texture_size": ([512, 1024, 2048, 4096, 8192], {"default": 2048}),
                 "decimation_target": ("INT", {"default": 500000, "min": 10000, "max": 2000000, "step": 10000}),
                 "remesh": ("BOOLEAN", {"default": True}),
                 "use_webp_texture": ("BOOLEAN", {"default": True}),
