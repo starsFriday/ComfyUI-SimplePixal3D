@@ -1,0 +1,196 @@
+{
+  "id": "30c0b288-8ad5-4d97-99f0-b897052800a0",
+  "revision": 0,
+  "last_node_id": 43,
+  "last_link_id": 47,
+  "nodes": [
+    {
+      "id": 42,
+      "type": "Preview3D",
+      "pos": [
+        1078.3390693939566,
+        695.5703962991015
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 47
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "Preview3D"
+      },
+      "widgets_values": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 32,
+      "type": "LoadImage",
+      "pos": [
+        390.0960730047798,
+        705.9136562052007
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            46
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "test (45).png",
+        "image"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "SimplePixal3DImageToGLB",
+      "pos": [
+        694.7663345548418,
+        701.2250312107344
+      ],
+      "size": [
+        344.995703125,
+        554
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "glb_path",
+          "type": "STRING",
+          "links": [
+            47
+          ]
+        },
+        {
+          "name": "preprocessed_image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mesh",
+          "type": "MESH",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SimplePixal3DImageToGLB"
+      },
+      "widgets_values": [
+        "models/pixal3d",
+        "1024",
+        true,
+        "manual_fov",
+        49.13,
+        12,
+        7.5,
+        7.5,
+        1,
+        49152,
+        2048,
+        500000,
+        true,
+        true,
+        "duplicate_lr",
+        true,
+        "pixal3d",
+        59108599128107,
+        "randomize",
+        "models/pixal3d/moge-2-vitl-normal.pt"
+      ]
+    }
+  ],
+  "links": [
+    [
+      46,
+      32,
+      0,
+      43,
+      0,
+      "IMAGE"
+    ],
+    [
+      47,
+      43,
+      0,
+      42,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0610764609500007,
+      "offset": [
+        -163.23065286132785,
+        -184.76837594824187
+      ]
+    },
+    "ue_links": [],
+    "frontendVersion": "1.44.19",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
